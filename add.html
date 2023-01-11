@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myfunc()
+        {
+            var x=document.getElementById('eid')
+            var regex="/^([0-9]{4})?/"
+            if(!(regex.text(x)))
+            {
+               alert("INVALID eid")
+            }
+        } 
+        function myfunc2()
+        {
+            var x=document.getElementById('name')
+            var regex="/^([A-z]{1})([a-z]+)?/"
+            if(!(regex.text(x)))
+            {
+               alert("INVALID name")
+            }
+        } 
+        function myfunc3()
+        {
+            var x=document.getElementById('dept')
+            var regex="/^([A-z]{2,5})?/"
+            if(!(regex.text(x)))
+            {
+               alert("INVALID dept")
+            }
+        }
+    </script>
+</head>
+<body>
+    <form method="post" action="/add2">
+        eid : <input required type="number"  onchange="myfunc" name="eid" id="eid"><br/><br/>
+        name : <input required  type="text"  name="name"  onchange="myfunc2" id="name"><br/><br/>
+        post : <input required type="text" name="desig" id="desig"><br/><br/>
+        dept: <input required  type="text"  name="dept"  onchange="myfunc3" id="dept"><br/><br/>
+        salary : <input required  type="number" name="salary" id="salary"><br/><br/>
+        location : <input required  type="text" name="location" id="location"><br/><br/>
+        <input type="submit" value="ADD">
+        <input type="reset" value="CLEAR">
+
+    </form>
+</body>
+</html>
